@@ -3,12 +3,21 @@ import { RiDeleteBinLine } from "react-icons/ri";
 import { FaAngleRight } from "react-icons/fa6";
 import { HiPlusSm } from "react-icons/hi";
 import { LuMinus } from "react-icons/lu";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+// import { incCounter } from "../../lib/action/action";
 import "../../sass/__cartCantent.scss";
 
 const CartCantent = () => {
-  const cart = useSelector((store) => store.cartList);
-  console.log(cart);
+  const cart = useSelector((store) => store.cartSlice.cartList);
+
+  const inc = useSelector((s) => s.counter);
+
+  let dispatch = useDispatch();
+
+  // const handleRemove = (id) => {
+  //   dispatch({ type: "REMOVE_FROM_CART", payload: { id } });
+  // };
+
   let cartItem = cart?.map((el) => (
     <div key={el.id} className="cart__item">
       <div className="cart__item-img">
@@ -22,8 +31,8 @@ const CartCantent = () => {
         <button>
           <LuMinus />
         </button>
-        <span>{el.quantity}</span>
-        <button className="inc">
+        <span>{inc}</span>
+        <button onClick={() => dispatch()} className="inc">
           <HiPlusSm />
         </button>
       </div>
