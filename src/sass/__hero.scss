@@ -1,0 +1,38 @@
+.hero__wrapper {
+  .hero__section {
+    display: flex;
+    img {
+      width: 70%;
+    }
+    .hero__info {
+      width: 30%;
+      background-color: #d7cdc3;
+      div {
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        margin-left: 70px;
+        margin-top: 60px;
+        flex-direction: column;
+      }
+      h2 {
+        font-size: 50px;
+      }
+      p {
+        font-size: 17px;
+        margin: 20px 0;
+      }
+      button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        width: 80%;
+        padding: 14px 16px;
+        border-radius: 20px;
+        background-color: black;
+        color: #fff;
+      }
+    }
+  }
+}
